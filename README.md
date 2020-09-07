@@ -5,7 +5,6 @@ My projects at work have also gradually migrated away from Google Maps (but stil
 so there's less and less incentive to maintain.
 
 If you have time to contribute to a rather frequently used library, feel free to make a PR!
-For more background, please refer to [this issue](https://github.com/xkjyeah/vue-google-maps/issues/514).
 
 What's urgently needed are:
 
@@ -17,7 +16,7 @@ The above three will go a long way to keeping the project maintainable and contr
 
 # vue-google-maps
 
-[![Build Status](https://travis-ci.org/xkjyeah/vue-google-maps.svg?branch=vue2)](https://travis-ci.org/xkjyeah/vue-google-maps)
+[![Build Status](https://travis-ci.org/DepokSarkar/vue-google-maps.svg?branch=quasar)](https://travis-ci.org/DepokSarkar/vue-google-maps)
 
 ## Vue-2 port of vue-google-maps
 
@@ -36,7 +35,7 @@ This new package has new documentation with live examples that can you test with
 ### With npm (Recommended)
 
 ```
-npm install vue2-google-maps
+npm install quasar-google-maps
 ```
 
 ### Manually
@@ -46,7 +45,7 @@ Just download `dist/vue-google-maps.js` file and include it from your HTML.
 Be aware that if you use this method, you cannot use TitleCase for your components and your attributes.
 That is, instead of writing `<GmapMap>`, you need to write `<gmap-map>`.
 
-[Example](http://xkjyeah.github.io/vue-google-maps/overlay.html) ([Source code](https://github.com/xkjyeah/vue-google-maps/blob/no-deferred-ready/examples/overlay.html)).
+[Example](http://DepokSarkar.github.io/vue-google-maps/overlay.html) ([Source code](https://github.com/DepokSarkar/vue-google-maps/blob/no-deferred-ready/examples/overlay.html)).
 
 ## Basic usage / Documentation
 
@@ -80,7 +79,7 @@ In your `main.js` or inside a Nuxt plugin:
 
 ```js
 import Vue from 'vue'
-import * as VueGoogleMaps from 'vue2-google-maps'
+import * as VueGoogleMaps from 'quasar-google-maps'
 
 Vue.use(VueGoogleMaps, {
   load: {
@@ -101,7 +100,7 @@ Vue.use(VueGoogleMaps, {
   // autobindAllEvents: false,
 
   //// If you want to manually install components, e.g.
-  //// import {GmapMarker} from 'vue2-google-maps/src/components/marker'
+  //// import {GmapMarker} from 'quasar-google-maps/src/components/marker'
   //// Vue.component('GmapMarker', GmapMarker)
   //// then set installComponents to 'false'.
   //// If you want to automatically install all the components this property must be set to 'true':
@@ -136,7 +135,7 @@ If you need to gain access to the `google` object:
     :position="google && new google.maps.LatLng(1.38, 103.8)" />
 </template>
 <script>
-import {gmapApi} from 'vue2-google-maps'
+import {gmapApi} from 'quasar-google-maps'
 
 export default {
   computed: {
@@ -181,13 +180,13 @@ Vue.use(VueGoogleMaps, {
 For Nuxt.js projects, please import VueGoogleMaps in the following manner:
 
 ```js
-import * as VueGoogleMaps from '~/node_modules/vue2-google-maps'
+import * as VueGoogleMaps from '~/node_modules/quasar-google-maps'
 ```
 
 Add the following to your `nuxt.config.js`'s `build.extend()`:
 
 ```js
-transpile: [/^vue2-google-maps($|\/)/]
+transpile: [/^quasar-google-maps($|\/)/]
 ```
 
 ### Officially supported components:
@@ -202,12 +201,12 @@ The list of officially support components are:
 - Autocomplete
 - Cluster* (via `marker-clusterer-plus`)
 
-You can find examples of this [on the website](http://xkjyeah.github.io/vue-google-maps/).
-Auto-generated API documentation for these components are [here](http://xkjyeah.github.io/vue-google-maps/autoapi.html).
+You can find examples of this [on the website](http://DepokSarkar.github.io/vue-google-maps/).
+Auto-generated API documentation for these components are [here](http://DepokSarkar.github.io/vue-google-maps/autoapi.html).
 
 For `Cluster`, you **must** import the class specifically, e.g.
 ```js
-import GmapCluster from 'vue2-google-maps/dist/components/cluster' // replace src with dist if you have Babel issues
+import GmapCluster from 'quasar-google-maps/dist/components/cluster' // replace src with dist if you have Babel issues
 
 Vue.component('GmapCluster', GmapCluster)
 ```
@@ -239,17 +238,17 @@ This requires vue 2.6 or higher for the new slot support.
 
 **NOTE: The official NPM package does not support this until the NPM package is updated, you can use this alternate temporary one or build your own version from source.**
 
-https://www.npmjs.com/package/vue2-google-maps-withscopedautocomp
+https://www.npmjs.com/package/quasar-google-maps-withscopedautocomp
 
 ### Adding your own components
 
 It should be relatively easy to add your own components (e.g. Heatmap, GroundOverlay). please refer to the
-[source code for `MapElementFactory`](https://github.com/xkjyeah/vue-google-maps/blob/vue2/src/components/mapElementFactory.js).
+[source code for `MapElementFactory`](https://github.com/DepokSarkar/vue-google-maps/blob/vue2/src/components/mapElementFactory.js).
 
 Example for [DirectionsRenderer](https://developers.google.com/maps/documentation/javascript/reference/3/#DirectionsRenderer):
 ```js
 // DirectionsRenderer.js
-import {MapElementFactory} from 'vue2-google-maps'
+import {MapElementFactory} from 'quasar-google-maps'
 
 export default MapElementFactory({
   name: 'directionsRenderer',
